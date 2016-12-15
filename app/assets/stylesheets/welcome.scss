@@ -1,0 +1,23 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.main_part{
+  float: top;
+  margin:0px;
+  height: 400px;
+  padding-top:100px;
+  background-image:url(../images/welcome_background.jpg);
+}
+h1{
+  text-align: center;
+  font-size: 50px;
+  color: #404040;
+}
+.bulletin{
+  margin-top: 500px;
+  height: 500px;
+}
+.buttons{
+  align-items: inline;
+  
+}
