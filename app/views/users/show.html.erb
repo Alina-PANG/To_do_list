@@ -1,20 +1,17 @@
-<html>
-  <head></head>
-  <body>
-    <p>
-      <strong>Username:</strong>
-      <%= @user.user_name %>
-    </p>
-
-    <p>
-      <strong>Password:</strong>
-      <%= @user.password %>
-    </p>
-    <p>
-  <strong>Email:</strong>
-  <%= @user.email %>
+<p>
+  <%= @user.user_name %>
 </p>
-<%= link_to 'Enter My Homepage', user_list_path %>
 
-  </body>
-</html>
+<h2>Add a list:</h2>
+<%= form_for([@user, @user.lists.build]) do |f| %>
+  <p>
+    <%= f.label :list_name %><br>
+    <%= f.text_field :list_name %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', user_lists_path %>

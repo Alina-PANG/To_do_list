@@ -1,0 +1,37 @@
+<%= form_for :task, url: user_list_tasks_path do |f| %>
+<% if @task.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@task.errors.count, "error") %> prohibited
+        this task from being saved:
+      </h2>
+      <ul>
+        <% @task.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    Task Name
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    Importance
+    <%= f.number_field :imp, options = {in: 0..5} %>
+  </p>
+  <p>
+    Due Date
+    <%= f.datetime_field :date %>
+  </p>
+  <p>
+    Comment
+    <%= f.text_area :comment %>
+  </p>
+
+  <p>
+    <%= f.submit :Submit %>
+  </p>
+
+<% end %>

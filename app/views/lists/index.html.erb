@@ -1,0 +1,20 @@
+<h1>Listing lists</h1>
+
+<table>
+  <tr>
+    <th>List Name</th>
+    <th>Number of Tasks</th>
+  </tr>
+
+  <% @lists.each do |list| %>
+    <tr>
+      <td><%= list.list_name %></td>
+      <td><%= list.list_num %></td>
+      <td><%= link_to 'Show All Tasks', user_list_tasks_path(list.user, list) %></td>
+      <td><%= link_to 'Delete List', [list.user, list], method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      <td><%= link_to 'Edit', edit_user_list_path(list.user, list) %></td>
+    </tr>
+  <% end %>
+  <%= link_to 'New', new_user_list_path %>
+
+</table>

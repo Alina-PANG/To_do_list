@@ -4,12 +4,14 @@ one:
   title: MyString
   status: false
   imp: 1
-  date: 2016-12-15 18:08:11
+  date: 2016-12-15 18:20:20
   comment: MyText
+  list: one
 
 two:
   title: MyString
   status: false
   imp: 1
-  date: 2016-12-15 18:08:11
+  date: 2016-12-15 18:20:20
   comment: MyText
+  list: two

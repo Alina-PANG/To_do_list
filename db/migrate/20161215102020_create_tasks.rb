@@ -6,6 +6,7 @@ class CreateTasks < ActiveRecord::Migration[5.0]
       t.integer :imp
       t.datetime :date
       t.text :comment
+      t.references :list, foreign_key: true
 
       t.timestamps
     end

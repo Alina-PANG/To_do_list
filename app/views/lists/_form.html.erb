@@ -1,0 +1,24 @@
+<%= form_for(:list, url: user_lists_path) do |f| %>
+<% if @list.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@list.errors.count, "error") %> prohibited
+        this list from being saved:
+      </h2>
+      <ul>
+        <% @list.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    List Name
+    <%= f.text_field :list_name, :placeholder => "List Name" %>
+  </p>
+
+  <p>
+    <%= f.submit "Create New List" %>
+  </p>
+<% end %>

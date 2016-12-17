@@ -3,6 +3,7 @@ class CreateLists < ActiveRecord::Migration[5.0]
     create_table :lists do |t|
       t.string :list_name
       t.integer :list_num
+      t.references :user, foreign_key: true
 
       t.timestamps
     end
