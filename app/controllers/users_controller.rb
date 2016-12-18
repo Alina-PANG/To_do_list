@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update(user_params)
-      redirect_to lists_path
+      redirect_to user_lists_path
     else
       render 'edit'
     end
@@ -37,6 +37,10 @@ class UsersController < ApplicationController
     @user.destroy
 
     redirect_to user_list_path
+  end
+
+  def password
+    @user = User.find(params[:id])
   end
 
   private

@@ -30,10 +30,11 @@ class ListsController < ApplicationController
  end
 
  def update
+   @user = User.find(params[:user_id])
    @list = List.find(params[:id])
 
    if @list.update(list_params)
-     redirect_to @list
+     redirect_to user_lists_path(@user)
    else
      render 'edit'
    end

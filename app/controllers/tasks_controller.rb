@@ -24,8 +24,6 @@ class TasksController < ApplicationController
      @list = List.find(params[:list_id])
      @task = @list.tasks.create(task_params)
 
-     @list.list_num = @list.list_num + 1
-
      if @task.save
        redirect_to user_list_tasks_path(@user, @list)
      else
@@ -34,10 +32,12 @@ class TasksController < ApplicationController
    end
 
    def update
-     @task = task.find(params[:id])
+      @user = User.find(params[:user_id])
+      @list = List.find(params[:list_id])
+      @task = @list.tasks.find(params[:id])
 
      if @task.update(task_params)
-       redirect_to @task
+       redirect_to user_list_tasks_path
      else
        render 'edit'
      end
@@ -48,8 +48,6 @@ class TasksController < ApplicationController
      @list = List.find(params[:list_id])
      @task = @list.tasks.find(params[:id])
 
-     @list.list_num = @list.list_num - 1
-
      @task.destroy
      redirect_to user_list_tasks_path(@user, @list)
    end
@@ -58,7 +56,5 @@ class TasksController < ApplicationController
      def task_params
        params.require(:task).permit(:title, :imp, :date, :comment)
      end
-
-
 
 end
