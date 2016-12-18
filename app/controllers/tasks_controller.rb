@@ -1,14 +1,15 @@
 class TasksController < ApplicationController
     before_action :require_user, only: [:new, :create, :edit, :destroy, :update]
     def index
-      @tasks = Task.all
+      @user = User.find(params[:user_id])
+      @list = @user.lists.find(params[:list_id])
+      @tasks = @list.tasks.all
     end
 
     def show
       @user = User.find(params[:user_id])
-      @list = List.find(params[:list_id])
+      @list = @user.lists.find(params[:list_id])
       @task = @list.tasks.find(params[:id])
-      redirect_to user_list_task_path(@user, @list, @task)
     end
 
    def new
@@ -21,7 +22,7 @@ class TasksController < ApplicationController
 
    def create
      @user = User.find(params[:user_id])
-     @list = List.find(params[:list_id])
+     @list = @user.lists.find(params[:list_id])
      @task = @list.tasks.create(task_params)
 
      if @task.save
@@ -33,7 +34,7 @@ class TasksController < ApplicationController
 
    def update
       @user = User.find(params[:user_id])
-      @list = List.find(params[:list_id])
+      @list = @user.lists.find(params[:list_id])
       @task = @list.tasks.find(params[:id])
 
      if @task.update(task_params)
@@ -45,7 +46,7 @@ class TasksController < ApplicationController
 
    def destroy
      @user = User.find(params[:user_id])
-     @list = List.find(params[:list_id])
+     @list = @user.lists.find(params[:list_id])
      @task = @list.tasks.find(params[:id])
 
      @task.destroy

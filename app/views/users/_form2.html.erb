@@ -24,11 +24,12 @@
   </p>
 
   <p>
-    If want to change password, click
-    <%= link_to "here", user_password_path(@user) %>
-  </p>
-
-  <p>
     <%= f.submit :Submit %>
   </p>
+
+
 <% end %>
+<p>
+  If want to change password, click
+  <%= link_to "here", new_password_reset_path %>
+</p>

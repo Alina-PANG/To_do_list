@@ -1,7 +1,8 @@
 class ListsController < ApplicationController
   before_action :require_user, only: [:new, :create, :edit, :destroy, :update]
   def index
-    @lists = List.all
+    @user = User.find(params[:user_id])
+    @lists = @user.lists.all
   end
 
   def show

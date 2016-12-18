@@ -4,6 +4,34 @@
 </p>
 
 <p>
+  <strong>Status:</strong>
+  <% if @task.status == false %>
+     false
+  <% else %>
+     true
+  <% end %>
+</p>
+
+<p>
   <strong>Importance:</strong>
   <%= @task.imp %>
 </p>
+
+<p>
+  <strong>Create Date:</strong>
+  <%= @task.created_at %>
+</p>
+
+<p>
+  <strong>Due Date:</strong>
+  <%= @task.date %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @task.comment %>
+</p>
+
+<td><%= link_to 'Back', user_list_tasks_path(@task.list.user, @task.list) %></td>
+<td><%= link_to 'Edit', edit_user_list_task_path(@task.list.user, @task.list, @task) %></td>
+<td><%= link_to 'Delete', [@task.list.user, @task.list, @task], method: :delete, data: {confirm: 'Are you sure?'} %></td>

@@ -1,0 +1,13 @@
+<%= form_for :password_reset, url: password_resets_path, :method => :post do %>
+  <div class="field">
+
+      <%= label_tag :user_name %>
+      <%= text_field_tag :user_name, params[:user_name] %>
+
+  </div>
+  <div class="actions"><%= submit_tag "Reset Password" %></div>
+<% end %>
+<p>If the email is not received, please click <%= link_to "here", edit_password_reset_path(:password_reset) %></p>
+<% if current_user %>
+  <%= link_to 'Back', user_lists_path(current_user) %>
+<% end %>

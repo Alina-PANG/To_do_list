@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
+  default_url_options :host => "localhost:3000"
   root 'welcome#index'
   get '/signup', to: 'users#new'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
+  resources :password_resets, only: [:new, :create, :edit, :update]
+
   resources :users do
-    get 'password', to: 'user#password'
     resources :lists do
       resources :tasks
     end
