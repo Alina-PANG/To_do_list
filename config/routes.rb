@@ -10,7 +10,11 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :lists do
+      get '/rank/imp', to: 'tasks#rank_by_imp'
+      get '/rank/date', to: 'tasks#rank_by_date'
+      get '/rank/status', to: 'tasks#rank_by_status'
       resources :tasks
+
     end
   end
 

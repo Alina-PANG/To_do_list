@@ -6,6 +6,24 @@ class TasksController < ApplicationController
       @tasks = @list.tasks.all
     end
 
+    def rank_by_imp
+      @user = User.find(params[:user_id])
+      @list = @user.lists.find(params[:list_id])
+      @tasks = @list.tasks.order(:imp)
+    end
+
+    def rank_by_date
+      @user = User.find(params[:user_id])
+      @list = @user.lists.find(params[:list_id])
+      @tasks = @list.tasks.order(:date)
+    end
+
+    def rank_by_status
+      @user = User.find(params[:user_id])
+      @list = @user.lists.find(params[:list_id])
+      @tasks = @list.tasks.order(:status)
+    end
+
     def show
       @user = User.find(params[:user_id])
       @list = @user.lists.find(params[:list_id])
