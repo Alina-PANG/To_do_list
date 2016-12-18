@@ -1,17 +1,18 @@
 # To Do List App
 
 - [Illustration](#illustration)
-- [Features](#feature)
+- [Features](#features)
 - [Version](#version)
 - [Installation](#installation)
-- [Future Work](#future)
+- [Future Work](#future work)
+- [License](#license)
 
 ## Illustration
 This app is for the homework of NUSSU COMMIT
 Tables included:
 <img src="schema.png">
 
-## Feature
+## Features
 - This app is a simple to do list without css (yet)
 - signup
 - login
@@ -29,7 +30,7 @@ Rails 5.0.0.1
 
 ## Installation
 
-To run the app, do:
+To run the app, do <br />
 1. git pull https://github.com/Alina-PANG/To_do_list.git, into Sites/
 2. on the command line:
 ```
@@ -40,7 +41,13 @@ To run the app, do:
 
 3. in the browser, go to url: localhost:3000
 
-## future
+
+## Future work
 1. Checkbox --> change status
 2. Hide completed tasks
 3. Css
+
+
+
+## License
+This work is licensed under NUSSU COMMIT © Hangzhi
