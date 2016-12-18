@@ -21370,3 +21370,4 @@ Processing by TasksController#rank_by_status as HTML
 Completed 200 OK in 72ms (Views: 59.4ms | ActiveRecord: 2.2ms)
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m

@@ -1,24 +1,46 @@
-# README
+# To Do List App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- [Illustration](#illustration)
+- [Features](#feature)
+- [Version](#version)
+- [Installation](#installation)
+- [Future Work](#future)
 
-Things you may want to cover:
+## Illustration
+This app is for the homework of NUSSU COMMIT
+Tables included:
+<img src="schema.png">
 
-* Ruby version
+## Feature
+- This app is a simple to do list without css (yet)
+- signup
+- login
+- reset password (but cannot reseive email)
+- can CRUD lists & tasks, CRU user profile
+- can rank tasks according to their attributes
+- clear directions (link_to) in each page
 
-* System dependencies
+## Version
+* Ruby
+ruby 2.3.1p112 (2016-04-26 revision 54768) [x86_64-darwin15]
 
-* Configuration
+* Rails
+Rails 5.0.0.1
 
-* Database creation
+## Installation
 
-* Database initialization
+To run the app, do:
+1. git pull https://github.com/Alina-PANG/To_do_list.git, into Sites/
+2. on the command line:
+```
+        cd Sites/to_do_list
+        bin/rails s'cd Sites/to_do_list
+        bin/rails db:migrate
+```
 
-* How to run the test suite
+3. in the browser, go to url: localhost:3000
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## future
+1. Checkbox --> change status
+2. Hide completed tasks
+3. Css
