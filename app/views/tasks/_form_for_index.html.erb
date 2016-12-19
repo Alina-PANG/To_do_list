@@ -16,8 +16,10 @@
 
       <td>
         Incompleted
-        <%= form_for t, url: user_list_task_markComplete_path(t.list.user, t.list, t), method: :patch do |f| %>
-            <%= check_box_tag(t.status, true) %>
+
+        <%= @task = Task.find_by_id(t.id) %>
+        <%= form_for @task, url: user_list_task_markComplete_path(t.list.user, t.list, t), method: :patch do |f| %>
+            <%= check_box_tag :complete, 1, params[:complete] %>
             <%= f.submit :Submit %>
         <% end %>
       <td>

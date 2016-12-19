@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
-    before_action :require_user, only: [:new, :create, :edit, :destroy, :update]
+    before_action :require_user
+
     def index
       @user = User.find(params[:user_id])
       @list = @user.lists.find(params[:list_id])
@@ -31,9 +32,7 @@ class TasksController < ApplicationController
     end
 
     def show
-      @user = User.find(params[:user_id])
-      @list = @user.lists.find(params[:list_id])
-      @task = @list.tasks.find(params[:id])
+      @task = Task.find(params[:id])
     end
 
    def new
@@ -57,24 +56,19 @@ class TasksController < ApplicationController
    end
 
    def markComplete
-     @user = User.find(params[:user_id])
-     @list = @user.lists.find(params[:list_id])
-     @task = @list.tasks.find(params[:id])
+     @task = Task.find(params[:id])
+     @task.status = true
 
-     if @task.update(task_params2)
+     if params[:complete] && @task.update(task_params2)
        flash[:notice] = "Marked as completed successfully!"
-       redirect_to user_list_tasks_path
      else
        flash[:notice] = "Change record failed!"
-       redirect_to user_list_tasks_path
      end
-
+     redirect_to user_list_tasks_path
    end
 
    def update
-      @user = User.find(params[:user_id])
-      @list = @user.lists.find(params[:list_id])
-      @task = @list.tasks.find(params[:id])
+      @task = Task.find(params[:id])
 
      if @task.update(task_params)
        redirect_to user_list_tasks_path
@@ -84,9 +78,7 @@ class TasksController < ApplicationController
    end
 
    def destroy
-     @user = User.find(params[:user_id])
-     @list = @user.lists.find(params[:list_id])
-     @task = @list.tasks.find(params[:id])
+     @task = Task.find(params[:id])
 
      @task.destroy
      redirect_to user_list_tasks_path(@user, @list)
