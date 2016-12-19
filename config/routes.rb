@@ -13,7 +13,11 @@ Rails.application.routes.draw do
       get '/rank/imp', to: 'tasks#rank_by_imp'
       get '/rank/date', to: 'tasks#rank_by_date'
       get '/rank/status', to: 'tasks#rank_by_status'
-      resources :tasks
+      get '/completed', to: 'tasks#completed'
+
+      resources :tasks do
+        patch '/markComplete', to: 'tasks#markComplete'
+      end
 
     end
   end
