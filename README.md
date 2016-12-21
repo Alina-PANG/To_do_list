@@ -35,7 +35,7 @@ To run the app, do <br />
 2. on the command line:
 ```
         cd Sites/to_do_list
-        bin/rails s'cd Sites/to_do_list
+        bin/rails s  
         bin/rails db:migrate
 ```
 <br />
