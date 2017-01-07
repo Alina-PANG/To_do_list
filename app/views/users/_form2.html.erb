@@ -1,3 +1,4 @@
+<br><br>
 <%= form_for :user, url: user_path, method: :patch do |f| %>
 <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -22,14 +23,15 @@
     Change Email<br>
     <%= f.email_field :email %>
   </p>
-
+<br>
   <p>
     <%= f.submit :Submit %>
   </p>
 
 
 <% end %>
-<p>
+<br>
+<h5>
   If want to change password, click
   <%= link_to "here", new_password_reset_path %>
-</p>
+</h5>

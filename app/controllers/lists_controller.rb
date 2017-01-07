@@ -11,46 +11,46 @@ class ListsController < ApplicationController
     redirect_to user_list_tasks_path(@user, @list)
   end
 
- def new
-   @list = List.new
- end
+  def new
+    @list = List.new
+  end
 
- def edit
-   @list = List.find(params[:id])
- end
+  def edit
+    @list = List.find(params[:id])
+  end
 
- def create
-   @user = User.find(params[:user_id])
-   @list = @user.lists.create(list_params)
+  def create
+    @user = User.find(params[:user_id])
+    @list = @user.lists.create(list_params)
 
-   if @list.save
-     redirect_to user_lists_path(@user)
-   else
-     render 'new'
-   end
- end
+    if @list.save
+      redirect_to user_lists_path(@user)
+    else
+      render 'new'
+    end
+  end
 
- def update
-   @user = User.find(params[:user_id])
-   @list = List.find(params[:id])
+  def update
+    @user = User.find(params[:user_id])
+    @list = List.find(params[:id])
 
-   if @list.update(list_params)
-     redirect_to user_lists_path(@user)
-   else
-     render 'edit'
-   end
- end
+    if @list.update(list_params)
+      redirect_to user_lists_path(@user)
+    else
+      render 'edit'
+    end
+  end
 
- def destroy
-   @user = User.find(params[:user_id])
-   @list = @user.lists.find(params[:id])
-   @list.destroy
-   redirect_to user_lists_path
- end
+  def destroy
+    @user = User.find(params[:user_id])
+    @list = @user.lists.find(params[:id])
+    @list.destroy
+    redirect_to user_lists_path
+  end
 
- private
-   def list_params
-     params.require(:list).permit(:list_name)
-   end
+  private
 
+  def list_params
+    params.require(:list).permit(:list_name)
+  end
 end

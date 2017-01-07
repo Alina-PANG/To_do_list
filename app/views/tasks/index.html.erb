@@ -1,5 +1,8 @@
 <h1>Listing tasks</h1>
 <%= render 'form_for_index' %>
-<%= link_to 'View Completed Tasks', user_list_completed_path %>
-<%= link_to 'New', new_user_list_task_path %>
-<%= link_to 'Back', user_lists_path %>
+
+<div class="btn-group">
+  <button type="button" class="btn btn-default"><%= link_to 'View Completed Tasks', user_list_completed_path %></button>
+  <button type="button" class="btn btn-default"><%= link_to 'New', new_user_list_task_path %></button>
+  <button type="button" class="btn btn-default"><%= link_to 'Back', user_lists_path %></button>
+</div>

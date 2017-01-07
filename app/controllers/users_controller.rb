@@ -25,7 +25,6 @@ class UsersController < ApplicationController
     else
       render 'new'
     end
-
   end
 
   def show
@@ -39,10 +38,9 @@ class UsersController < ApplicationController
     redirect_to user_list_path
   end
 
-
   private
+
   def user_params
     params.require(:user).permit(:user_name, :password, :email)
   end
-
 end

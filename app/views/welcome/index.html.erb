@@ -1,8 +1,12 @@
 <html>
 <head>
    <title>To Do List</title>
-   <%= stylesheet_link_tag 'Welcome' %>
+   <%= stylesheet_link_tag 'welcome.scss' %>
 <body>
+  <% if flash[:notice] %>
+   <div class="notice"><%= flash[:notice] %></div>
+ <% end %>
+
    <section class="main_part">
       <h1>Welcome</h1>
 

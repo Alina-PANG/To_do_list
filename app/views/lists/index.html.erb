@@ -1,20 +1,28 @@
 <h1>Listing lists</h1>
+<br><br>
+<table class="table table-striped">
+  <thead>
+     <tr>
+       <th>List Name</th>
+       <th>Number of Tasks</th>
 
-<table>
-  <tr>
-    <th>List Name</th>
-    <th>Number of Tasks</th>
-  </tr>
-
+     </tr>
+  </thead>
+<tbody>
   <% @lists.each do |list| %>
-    <tr>
+<tr>
       <td><%= list.list_name %></td>
       <td><%= list.tasks.count() %></td>
       <td><%= link_to 'Show All Tasks', user_list_tasks_path(list.user, list) %></td>
       <td><%= link_to 'Delete List', [list.user, list], method: :delete, data: {confirm: 'Are you sure?'} %></td>
       <td><%= link_to 'Edit', edit_user_list_path(list.user, list) %></td>
-    </tr>
+</tr>
+
   <% end %>
-  <%= link_to 'New', new_user_list_path %>
+</tbody>
+
+
 
 </table>
+<br>
+<button type="button" class="btn btn-default"><%= link_to 'Add New List', new_user_list_path %></button>

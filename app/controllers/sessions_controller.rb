@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
-  def new
-  end
+  def new; end
 
   def create
     user = User.find_by_user_name(params[:session][:user_name])
@@ -11,16 +10,17 @@ class SessionsController < ApplicationController
       else
         cookies[:auth_token] = user.auth_token
       end
-      redirect_to user_lists_path(user), flash[:notice] = "Logged in!"
+      flash[:notice] = 'Logged in!'
+      redirect_to user_lists_path(user)
     else
-      flash.now.alert = "Invalid email or password"
-      render "new"
+      flash.now.alert = 'Invalid email or password'
+      render 'new'
     end
   end
 
   def destroy
     cookies.delete(:auth_token)
-    redirect_to root_url, flash[:notice] = "Logged out!"
+    flash[:notice] = 'Logged out!'
+    redirect_to root_url
   end
-
 end

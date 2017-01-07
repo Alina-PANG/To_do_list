@@ -11,20 +11,35 @@
 
   <body>
 
-    <% if current_user %>
-  <ul>
-    <li><%= current_user.user_name %></li>
-    <li><%= link_to "Change my account settings", edit_user_path(current_user) %></li>
-    <li><%= link_to "Log out", logout_path, method: "delete" %></li>
-  </ul>
 
-  <%= link_to "My Home Page", user_lists_path(current_user) %>
-<% else %>
-  <ul>
-    <li><%= link_to "Login", 'login' %></a></li>
-    <li><%= link_to "Signup", 'signup' %></a></li>
-  </ul>
-<% end %>
+    <nav class="navbar navbar-inverse">
+
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <p class="navbar-brand">Hello,</p>
+
+        </div>
+            <% if current_user %>
+
+        <ul class="nav navbar-nav">
+          <p class="navbar-brand"><%= current_user.user_name %></p>
+          <li><%= link_to "My Home Page", user_lists_path(current_user) %></a></li>
+          <li><%= link_to "Change my account settings", edit_user_path(current_user) %></a></li>
+</ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+            </ul>
+
+        <% else %>
+        <ul class="nav navbar-nav navbar-right">
+          <li>icon glyphicon-log-in"></span><%= link_to "Login", 'login' %></li>
+        </ul>
+        <% end %>
+      </div>
+    </nav>
+<div class="container">
+
   <%= yield %>
+</div>
   </body>
 </html>

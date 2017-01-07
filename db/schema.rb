@@ -10,37 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161218085502) do
-
-  create_table "lists", force: :cascade do |t|
-    t.string   "list_name"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_lists_on_user_id"
+ActiveRecord::Schema.define(version: 20_161_218_085_502) do
+  create_table 'lists', force: :cascade do |t|
+    t.string   'list_name'
+    t.integer  'user_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['user_id'], name: 'index_lists_on_user_id'
   end
 
-  create_table "tasks", force: :cascade do |t|
-    t.string   "title"
-    t.boolean  "status"
-    t.integer  "imp"
-    t.datetime "date"
-    t.text     "comment"
-    t.integer  "list_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["list_id"], name: "index_tasks_on_list_id"
+  create_table 'tasks', force: :cascade do |t|
+    t.string   'title'
+    t.boolean  'status'
+    t.integer  'imp'
+    t.datetime 'date'
+    t.text     'comment'
+    t.integer  'list_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['list_id'], name: 'index_tasks_on_list_id'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string   "user_name"
-    t.string   "password_digest"
-    t.string   "email"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.string   "auth_token"
-    t.string   "password_reset_token"
-    t.datetime "password_reset_sent_at"
+  create_table 'users', force: :cascade do |t|
+    t.string   'user_name'
+    t.string   'password_digest'
+    t.string   'email'
+    t.datetime 'created_at',             null: false
+    t.datetime 'updated_at',             null: false
+    t.string   'auth_token'
+    t.string   'password_reset_token'
+    t.datetime 'password_reset_sent_at'
   end
-
 end

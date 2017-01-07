@@ -1,41 +1,55 @@
-
-<table>
-  <h1>Incompleted Tasks</h1>
+<% if @tasks %>
+<br>
+<h3>Incompleted Tasks</h3>
+<br><br>
+ <table class="table table-striped">
+<thead>
   <tr>
     <th>Title</th>
     <th>Status</th>
     <th>Importance</th>
     <th>Due Date</th>
+</tr>
+</thead>
 
-  </tr>
+<tbody>
 
   <% @tasks.each do |t| %>
-    <% if t.status == false %>
-    <tr>
-      <td><%= t.title %></td>
+<tr>
+  <%= t.status %>
 
-      <td>
+<div class="row">
+    <td><%= t.title %></td>
+
+
+    <td>
         Incompleted
 
-        <%= @task = Task.find_by_id(t.id) %>
+        <% @task = Task.find_by_id(t.id) %>
         <%= form_for @task, url: user_list_task_markComplete_path(t.list.user, t.list, t), method: :patch do |f| %>
             <%= check_box_tag :complete, 1, params[:complete] %>
             <%= f.submit :Submit %>
         <% end %>
-      <td>
+</td>
 
       <td><%= t.imp %></td>
       <td><%= t.date %></td>
       <td><%= link_to 'Show', user_list_task_path(t.list.user, t.list, t), method: :get %></td>
       <td><%= link_to 'Edit', edit_user_list_task_path(t.list.user, t.list, t) %></td>
       <td><%= link_to 'Delete', [t.list.user, t.list, t], method: :delete, data: {confirm: 'Are you sure?'} %></td>
-    </tr>
-    <% end %>
+</td>
+</tr>
   <% end %>
 
-
-
+</tbody>
 </table>
-<%= link_to "Rank by Importance", user_list_rank_imp_path %>
-<%= link_to "Rank by Date", user_list_rank_date_path %>
-<%= link_to "Rank by Status", user_list_rank_status_path %>
+<% else %>
+No incompleted tasks.
+<% end %>
+<br>
+<div class="btn-group">
+   <button type="button" class="btn btn-default"><%= link_to "Rank by Importance", user_list_tasks_path(order: "imp DESC") %></button>
+   <button type="button" class="btn btn-default"><%= link_to "Rank by Date", user_list_tasks_path(order: :date) %></button>
+   <button type="button" class="btn btn-default"><%= link_to "Rank by Status", user_list_tasks_path(order: :status) %></button>
+ </div>
+<br><br>

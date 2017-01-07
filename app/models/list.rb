@@ -3,6 +3,4 @@ class List < ApplicationRecord
   has_many :tasks, dependent: :destroy
   validates :list_name, presence: true,
                         uniqueness: true
-
-
 end

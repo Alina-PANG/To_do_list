@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  default_url_options :host => "localhost:3000"
+  default_url_options host: 'localhost:3000'
   root 'welcome#index'
   get '/signup', to: 'users#new'
   get '/login', to: 'sessions#new'
@@ -18,7 +18,6 @@ Rails.application.routes.draw do
       resources :tasks do
         patch '/markComplete', to: 'tasks#markComplete'
       end
-
     end
   end
 
