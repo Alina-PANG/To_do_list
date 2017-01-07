@@ -1,16 +1,21 @@
 # To Do List App
 
 - [Illustration](#illustration)
+- [Domain Model](#Domain_Model)
 - [Features](#features)
 - [Version](#version)
 - [Installation](#installation)
-- [Future Work](#future work)
+- [Future Work](#future_work)
 - [License](#license)
 
 ## Illustration
 This app is for the homework of NUSSU COMMIT
 Tables included:
 <img src="schema.png">
+
+## Domain Model
+Run `rake generate_erd` to regenerate (must have graphvis).
+![](/erd.png)
 
 ## Features
 - This app is a simple to do list without css (yet)
@@ -42,7 +47,7 @@ To run the app, do <br />
 3. in the browser, go to url: localhost:3000
 
 
-## Future work
+## Future Work
 1. Checkbox --> change status
 2. Css
 3. add somebody to friends
