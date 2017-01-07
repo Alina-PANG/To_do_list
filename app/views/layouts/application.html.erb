@@ -15,11 +15,12 @@
     <nav class="navbar navbar-inverse">
 
       <div class="container-fluid">
+        <% if current_user %>
+
         <div class="navbar-header">
           <p class="navbar-brand">Hello,</p>
 
         </div>
-            <% if current_user %>
 
         <ul class="nav navbar-nav">
           <p class="navbar-brand"><%= current_user.user_name %></p>
@@ -32,7 +33,12 @@
 
         <% else %>
         <ul class="nav navbar-nav navbar-right">
-          <li>icon glyphicon-log-in"></span><%= link_to "Login", 'login' %></li>
+          <li><%= link_to "Login", 'login' %></li>
+
+<li><%= link_to "Signup", 'signup' %></li>
+
+
+
         </ul>
         <% end %>
       </div>

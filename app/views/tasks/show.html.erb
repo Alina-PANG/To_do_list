@@ -1,3 +1,4 @@
+<br><br><br>
 <p>
   <strong>Title:</strong>
   <%= @task.title %>
@@ -29,9 +30,15 @@
 
 <p>
   <strong>Comment:</strong>
+  <% if @task.comment %>
+  None
+  <% else %>
   <%= @task.comment %>
+  <% end %>
 </p>
-
-<td><%= link_to 'Back', user_list_tasks_path(@task.list.user, @task.list) %></td>
-<td><%= link_to 'Edit', edit_user_list_task_path(@task.list.user, @task.list, @task) %></td>
-<td><%= link_to 'Delete', [@task.list.user, @task.list, @task], method: :delete, data: {confirm: 'Are you sure?'} %></td>
+<br><br><br>
+<div class="btn-group">
+  <button type="button" class="btn btn-default"><%= link_to 'Back', user_list_tasks_path(@task.list.user, @task.list) %></button>
+  <button type="button" class="btn btn-default"><%= link_to 'Edit', edit_user_list_task_path(@task.list.user, @task.list, @task) %></button>
+  <button type="button" class="btn btn-default"><%= link_to 'Delete', [@task.list.user, @task.list, @task], method: :delete, data: {confirm: 'Are you sure?'} %></button>
+</div>

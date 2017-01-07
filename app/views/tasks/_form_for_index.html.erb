@@ -16,7 +16,7 @@
 
   <% @tasks.each do |t| %>
 <tr>
-  <%= t.status %>
+
 
 <div class="row">
     <td><%= t.title %></td>
@@ -24,12 +24,6 @@
 
     <td>
         Incompleted
-
-        <% @task = Task.find_by_id(t.id) %>
-        <%= form_for @task, url: user_list_task_markComplete_path(t.list.user, t.list, t), method: :patch do |f| %>
-            <%= check_box_tag :complete, 1, params[:complete] %>
-            <%= f.submit :Submit %>
-        <% end %>
 </td>
 
       <td><%= t.imp %></td>

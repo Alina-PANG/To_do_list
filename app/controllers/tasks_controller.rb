@@ -1,11 +1,12 @@
 class TasksController < ApplicationController
   before_action :require_user
 
+#can remove task.index, and add the task.index to list.show
   def index
     @user = User.find(params[:user_id])
     @list = @user.lists.find(params[:list_id])
     if params[:order]
-      @tasks = @list.tasks.order([params[:order]])
+      @tasks = @list.tasks.order([params[:order]]).includes(:list)
     else
       @tasks = @list.tasks.order(:date)
     end

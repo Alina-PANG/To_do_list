@@ -1,11 +1,13 @@
 <html>
   <head>
-    <%= stylesheet_link_tag 'user_new' %>
+
   </head>
   <body>
-
+<br><br>
     <section>
       <%= render 'form' %>
     <section>
+        <div class="col-md-2"></div>
+      <button type="button" class="btn btn-default col-sm-8"><%= link_to 'Back', user_list_tasks_path %></button>
   </body>
 </html>

@@ -1,4 +1,5 @@
-<%= form_for :task, url: user_list_tasks_path do |f| %>
+<br><br>
+<%= form_for :task, url: user_list_tasks_path, :html => {:class => "form-horizontal center"} do |f| %>
 <% if @task.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -13,25 +14,37 @@
     </div>
   <% end %>
 
-  <p>
-    Task Name
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    Importance
-    <%= f.number_field :imp, options = {in: 0..5} %>
-  </p>
-  <p>
-    Due Date
-    <%= f.datetime_field :date %>
-  </p>
-  <p>
-    Comment
-    <%= f.text_area :comment %>
-  </p>
+  <div class="form-group">
+    <div class="form-group">
+        <%= f.label :title, "Task Name", class: "col-md-2 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :title, class: "form-control" %>
+        </div>
+      </div>
 
-  <p>
-    <%= f.submit :Submit %>
-  </p>
-
+      <div class="form-group">
+        <%= f.label :imp, "Importance", class: "col-md-2 control-label" %>
+        <div class="col-md-8">
+          <%= f.number_field :imp, options = {in: 0..5} %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :date, "Due Date", class: "col-md-2 control-label" %>
+        <div class="col-md-8">
+          <%= f.datetime_field :date, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :comment, "Comment", class: "col-md-2 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_area :comment, class: "form-control" %>
+        </div><br>
+      </div>
+      <div class="form-group">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <%= f.submit :Submit, class: "btn btn-default btn-primary col-md-8"  %>
+        </div>
+      </div>
+<br>
 <% end %>
