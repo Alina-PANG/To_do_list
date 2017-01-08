@@ -3,10 +3,21 @@
 #
 # Examples:
 #
-   u = User.create(user_name: 'John', password: '123abc', email: 'todolist@gmail.com')
-   List.create([{ list_name: 'Work', user_id: u.id}, { list_name: 'Travel', user_id: u.id}, { list_name: 'Family', user_id: u.id}])
+   u = User.create(id: 1, user_name: 'John', password: '123abc', email: 'todolist@gmail.com')
+   List.create([{
+     list_name: 'Work',
+     user: u
+     },
+     {
+       list_name: 'Travel',
+       user: u
+     },
+     {
+       list_name: 'Family',
+       user: u
+       }])
 
-
+p "Created #{List.count} lists"
 
 
 #user_lists = [
@@ -37,8 +48,6 @@
 #            :comment => 'This is a test case',
 #          }
 #      }
-
-
 #  }
 
 #User.create!(params[:user])
