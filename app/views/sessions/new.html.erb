@@ -1,4 +1,9 @@
-<br><br><br>
+
+<br>
+<% if flash[:notice] %>
+   <div class="alert alert-danger"><%= flash[:notice] %></div>
+ <% end %>
+<br><br>
 <%= form_for(:session, url: login_path) do |f| %>
 <div class="form-group">
 <div class="form-group">

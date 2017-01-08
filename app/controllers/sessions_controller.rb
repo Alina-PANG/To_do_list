@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
-  def new; end
+  def new
+  end
 
   def create
     user = User.find_by_user_name(params[:session][:user_name])
@@ -13,7 +14,7 @@ class SessionsController < ApplicationController
       flash[:notice] = 'Logged in!'
       redirect_to user_lists_path(user)
     else
-      flash.now.alert = 'Invalid email or password'
+      flash[:notice] = 'Invalid username or password'
       render 'new'
     end
   end

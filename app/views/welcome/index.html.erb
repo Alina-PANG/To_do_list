@@ -4,7 +4,7 @@
    <%= stylesheet_link_tag 'welcome.scss' %>
 <body>
   <% if flash[:notice] %>
-   <div class="notice"><%= flash[:notice] %></div>
+   <div class="alert alert-success"><%= flash[:notice] %></div>
  <% end %>
 
    <section class="main_part container">

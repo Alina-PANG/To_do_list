@@ -6,16 +6,16 @@ class TasksController < ApplicationController
     @user = User.find(params[:user_id])
     @list = @user.lists.find(params[:list_id])
     if params[:order]
-      @tasks = @list.tasks.order([params[:order]]).includes(:list)
+      @tasks = @list.tasks.incompleted.order([params[:order]])
     else
-      @tasks = @list.tasks.order(:date)
+      @tasks = @list.tasks.incompleted.order(:date)
     end
   end
 
   def completed
     @user = User.find(params[:user_id])
     @list = @user.lists.find(params[:list_id])
-@tasks = @list.tasks.where("completed = true").order(:date)
+@tasks = @list.tasks.completed.order(:date)
   end
 
   def show
