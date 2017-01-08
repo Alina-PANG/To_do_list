@@ -15,7 +15,7 @@ class TasksController < ApplicationController
   def completed
     @user = User.find(params[:user_id])
     @list = @user.lists.find(params[:list_id])
-@tasks = @list.tasks.where("status = true").order(:date)
+@tasks = @list.tasks.where("completed = true").order(:date)
   end
 
   def show
@@ -44,7 +44,7 @@ class TasksController < ApplicationController
 
   def markComplete
     @task = Task.find(params[:id])
-    @task.status = true
+    @task.completed = true
 
     flash[:notice] = if params[:complete] && @task.update(task_params2)
                        'Marked as completed successfully!'
@@ -74,10 +74,10 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:title, :imp, :date, :comment, :status)
+    params.require(:task).permit(:title, :imp, :date, :comment, :completed)
   end
 
   def task_params2
-    params.require(:task).permit(:status)
+    params.require(:task).permit(:completed)
   end
 end

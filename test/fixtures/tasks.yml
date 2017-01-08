@@ -2,7 +2,7 @@
 
 one:
   title: MyString
-  status: false
+  completed: false
   imp: 1
   date: 2016-12-15 18:20:20
   comment: MyText
@@ -10,7 +10,7 @@ one:
 
 two:
   title: MyString
-  status: false
+  completed: false
   imp: 1
   date: 2016-12-15 18:20:20
   comment: MyText

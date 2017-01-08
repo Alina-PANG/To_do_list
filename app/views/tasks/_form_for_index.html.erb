@@ -6,7 +6,7 @@
 <thead>
   <tr>
     <th>Title</th>
-    <th>Status</th>
+    <th>completed</th>
     <th>Importance</th>
     <th>Due Date</th>
 </tr>
@@ -44,6 +44,6 @@ No incompleted tasks.
 <div class="btn-group">
    <button type="button" class="btn btn-default"><%= link_to "Rank by Importance", user_list_tasks_path(order: "imp DESC") %></button>
    <button type="button" class="btn btn-default"><%= link_to "Rank by Date", user_list_tasks_path(order: :date) %></button>
-   <button type="button" class="btn btn-default"><%= link_to "Rank by Status", user_list_tasks_path(order: :status) %></button>
+   <button type="button" class="btn btn-default"><%= link_to "Rank by completed", user_list_tasks_path(order: :completed) %></button>
  </div>
 <br><br>

@@ -1,4 +1,7 @@
+
 <%= form_for(:list, url: user_lists_path) do |f| %>
+
+<% end %>
 <% if @list.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -12,13 +15,24 @@
       </ul>
     </div>
   <% end %>
-
-  <p>
-    List Name
-    <%= f.text_field :list_name, :placeholder => "List Name" %>
-  </p>
-
-  <p>
-    <%= f.submit "Create New List" %>
-  </p>
+  <br><br>
+  <div class="form-group">
+      <%= f.label :list_name, "List Name", class: "col-md-2 control-label" %>
+      <div class="col-md-8">
+        <%= f.text_field :list_name, :placeholder => "List Name", class: "form-control" %>
+      </div>
+  </div>
+<br><br><br>
+  <div class="form-group">
+    <div class="col-md-2"></div>
+    <% if true %>
+    <div class="col-md-8">
+      <%= f.submit "Create New List", class: "btn btn-default btn-primary col-md-8"  %>
+    </div>
+    <% else %>
+    <div class="col-md-8">
+      <%= f.submit "Submit", class: "btn btn-default btn-primary col-md-8"  %>
+    </div>
+    <% end %>
+  </div>
 <% end %>

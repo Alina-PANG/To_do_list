@@ -48,7 +48,7 @@ To run the app, do <br />
 
 
 ## Future Work
-1. Checkbox --> change status
+1. Checkbox --> change completed
 2. Css
 3. add somebody to friends
 

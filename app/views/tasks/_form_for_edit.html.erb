@@ -14,17 +14,17 @@
     </div>
   <% end %>
 
-  <div class="form-group">
+
     <div class="form-group">
         <%= f.label :title, "Task Name", class: "col-md-2 control-label" %>
         <div class="col-md-8">
           <%= f.text_field :title, class: "form-control" %>
         </div>
-      </div>
+    </div>
       <div class="form-group">
-        <%= f.label :status, "Status", class: "col-md-2 control-label" %>
+        <%= f.label :completed, "completed", class: "col-md-2 control-label" %>
         <div class="col-md-1">
-          <%= f.check_box :status, class: "form-control" %>
+          <%= f.check_box :completed, class: "form-control" %>
         </div>
       </div>
       <div class="form-group">

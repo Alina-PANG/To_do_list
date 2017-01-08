@@ -1,9 +1,12 @@
 source 'https://rubygems.org'
 
-#For loading Graphiz in rails application
+#Self-added. https://github.com/plataformatec/simple_form
+gem 'simple_form'
+
+#Self-added. For loading Graphiz in rails application
 gem "rails-erd"
 
-#to install bootstrap in rails
+#Self-added. to install bootstrap in rails
 gem 'bootstrap-sass', '~> 3.3.7'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
