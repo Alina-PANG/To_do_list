@@ -15,7 +15,7 @@ class TasksController < ApplicationController
   def completed
     @user = User.find(params[:user_id])
     @list = @user.lists.find(params[:list_id])
-@tasks = @list.tasks.completed.order(:date)
+@tasks = @list.tasks.completed.order(:updated_at)
   end
 
   def show
@@ -42,17 +42,6 @@ class TasksController < ApplicationController
     end
   end
 
-  def markComplete
-    @task = Task.find(params[:id])
-    @task.completed = true
-
-    flash[:notice] = if params[:complete] && @task.update(task_params2)
-                       'Marked as completed successfully!'
-                     else
-                       'Change record failed!'
-                     end
-    redirect_to user_list_tasks_path
-  end
 
   def update
     @task = Task.find(params[:id])

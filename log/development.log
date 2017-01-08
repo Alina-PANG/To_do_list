@@ -32920,3 +32920,1094 @@ Completed 200 OK in 197ms (Views: 179.7ms | ActiveRecord: 0.8ms)
 
 
   [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started POST "/login" for ::1 at 2017-01-08 11:00:33 +0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EfB2n6toBAYyU5tsq5Bn0/1rCxAR6HZZ34/hL9L1dNNDLvttcxq4EHRhW172Vxh+BCpNXDUJtsRzo79T45s1eQ==", "session"=>{"user_name"=>"Alina", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "Alina"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 401ms (Views: 256.2ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/login" for ::1 at 2017-01-08 11:00:39 +0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+L3OUZn4xQjLBFhAeX7TdT7pZeqBqYmO+a+JbY/wrduqY0OjQYp5Ho02mHIkuazYx6gjpqVISRNVg9cRvp7scQ==", "session"=>{"user_name"=>"Alina", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "Alina"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/1/lists
+Completed 302 Found in 80ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1/lists" for ::1 at 2017-01-08 11:00:39 +0800
+Processing by ListsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering lists/index.html.erb within layouts/application
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 2]]
+  Rendered lists/index.html.erb within layouts/application (33.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+Completed 200 OK in 136ms (Views: 119.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users/1/lists/1/tasks" for ::1 at 2017-01-08 11:00:46 +0800
+Processing by TasksController#index as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ? AND "tasks"."completed" = ? ORDER BY "tasks"."date" ASC[0m  [["list_id", 1], ["completed", false]]
+  Rendered tasks/_form_for_index.html.erb (11.8ms)
+  Rendered tasks/index.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 98ms (Views: 86.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/1/lists/1/tasks" for ::1 at 2017-01-08 11:03:53 +0800
+Processing by TasksController#index as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ? ORDER BY "tasks"."date" ASC[0m  [["list_id", 1]]
+  Rendered tasks/_form_for_index.html.erb (14.0ms)
+  Rendered tasks/index.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 247ms (Views: 196.0ms | ActiveRecord: 2.5ms)
+
+
+Started DELETE "/users/1/lists/1/tasks/12" for ::1 at 2017-01-08 11:03:57 +0800
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"AGrIUvPe/EMkZOV6l7p3c/eRaFBARiczPgxViwrvdYVStEWgK6xAVWJWJUjKfQjeDtAuHGSn566SIAv3O4E0Lw==", "user_id"=>"1", "list_id"=>"1", "id"=>"12"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 12]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/1/lists/1/tasks
+Completed 302 Found in 14ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/users/1/lists/1/tasks" for ::1 at 2017-01-08 11:03:57 +0800
+Processing by TasksController#index as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ? ORDER BY "tasks"."date" ASC[0m  [["list_id", 1]]
+  Rendered tasks/_form_for_index.html.erb (6.4ms)
+  Rendered tasks/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 89ms (Views: 78.7ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/users/1/lists/1/tasks/9" for ::1 at 2017-01-08 11:04:01 +0800
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"W6hv7gg+WO3yXdSX2+7Vlp4Rw3iXm9yu3HZXlRMD3L8JduIc0Ezk+7RvFKWGKao7Z1CFNLN6HDNwWgnpIm2dFQ==", "user_id"=>"1", "list_id"=>"1", "id"=>"9"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 9]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/1/lists/1/tasks
+Completed 302 Found in 14ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/users/1/lists/1/tasks" for ::1 at 2017-01-08 11:04:01 +0800
+Processing by TasksController#index as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ? ORDER BY "tasks"."date" ASC[0m  [["list_id", 1]]
+  Rendered tasks/_form_for_index.html.erb (6.1ms)
+  Rendered tasks/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 91ms (Views: 82.8ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/users/1/lists/1/tasks/11" for ::1 at 2017-01-08 11:04:03 +0800
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"bh7OaZdFG90ImJ2b9JqnG5yqFRr973vIeQg61iatnPo8wEObTzeny06qXampXdi2ZetTVtkOu1XVJGSqF8PdUA==", "user_id"=>"1", "list_id"=>"1", "id"=>"11"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 11]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/1/lists/1/tasks
+Completed 302 Found in 13ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/users/1/lists/1/tasks" for ::1 at 2017-01-08 11:04:03 +0800
+Processing by TasksController#index as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ? ORDER BY "tasks"."date" ASC[0m  [["list_id", 1]]
+  Rendered tasks/_form_for_index.html.erb (4.2ms)
+  Rendered tasks/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 84ms (Views: 77.3ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/users/1/lists/1/tasks/8" for ::1 at 2017-01-08 11:04:04 +0800
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"27k7vRJ7PHnZ2znPKHu2/mB0RcXEha1IjHI1iZUZgvWJZ7ZPygmAb5/p+f11vMlTmTUDieBkbdUgXmv1pHfDXw==", "user_id"=>"1", "list_id"=>"1", "id"=>"8"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 8]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/1/lists/1/tasks
+Completed 302 Found in 12ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/users/1/lists/1/tasks" for ::1 at 2017-01-08 11:04:04 +0800
+Processing by TasksController#index as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ? ORDER BY "tasks"."date" ASC[0m  [["list_id", 1]]
+  Rendered tasks/_form_for_index.html.erb (3.1ms)
+  Rendered tasks/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 84ms (Views: 74.6ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/users/1/lists/1/tasks/10" for ::1 at 2017-01-08 11:04:06 +0800
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"n83ugWW5xtsXcItjg85yi0JsPQz7kMyFJ8Qq2yqfbOHNE2Nzvct6zVFCS1HeCQ0muy17QN9xDBiL6HSnG/EtSw==", "user_id"=>"1", "list_id"=>"1", "id"=>"10"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 10]]
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/1/lists/1/tasks
+Completed 302 Found in 13ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/users/1/lists/1/tasks" for ::1 at 2017-01-08 11:04:06 +0800
+Processing by TasksController#index as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ? ORDER BY "tasks"."date" ASC[0m  [["list_id", 1]]
+  Rendered tasks/_form_for_index.html.erb (2.8ms)
+  Rendered tasks/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 92ms (Views: 85.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1/lists/1/tasks/new" for ::1 at 2017-01-08 11:04:13 +0800
+Processing by TasksController#new as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (3.2ms)
+  Rendered tasks/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 128ms (Views: 77.2ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/users/1/lists/1/tasks" for ::1 at 2017-01-08 11:04:35 +0800
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uYm1aQPqBwImvA+gucsenZX3PxEgsdXRUZiBrUBawhG/naUOSyd+3K8hdYcobqAcJreyLjsf/5wZop9EwXAPkg==", "task"=>{"title"=>"CORS bidding", "imp"=>"5", "date"=>"2017-01-09T09:00", "comment"=>""}, "commit"=>"Submit", "user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "completed", "imp", "date", "comment", "list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "CORS bidding"], ["completed", false], ["imp", 5], ["date", 2017-01-09 09:00:00 UTC], ["comment", ""], ["list_id", 1], ["created_at", 2017-01-08 03:04:35 UTC], ["updated_at", 2017-01-08 03:04:35 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/1/lists/1/tasks
+Completed 302 Found in 36ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/users/1/lists/1/tasks" for ::1 at 2017-01-08 11:04:35 +0800
+Processing by TasksController#index as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 1]]
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `incomplete' for #<Task::ActiveRecord_Associations_CollectionProxy:0x007f97cc256348>):
+  
+app/controllers/tasks_controller.rb:11:in `index'
+  Rendering /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.9ms)
+  Rendering /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (98.9ms)
+Started GET "/users/1/lists/1/tasks" for ::1 at 2017-01-08 11:04:47 +0800
+Processing by TasksController#index as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ? AND "tasks"."completed" = ? ORDER BY "tasks"."date" ASC[0m  [["list_id", 1], ["completed", false]]
+  Rendered tasks/_form_for_index.html.erb (11.1ms)
+  Rendered tasks/index.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 267ms (Views: 205.4ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/users/1/lists/1/tasks" for ::1 at 2017-01-08 11:05:18 +0800
+Processing by TasksController#index as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ? AND "tasks"."completed" = ? ORDER BY "tasks"."date" ASC[0m  [["list_id", 1], ["completed", false]]
+  Rendered tasks/_form_for_index.html.erb (2.7ms)
+  Rendered tasks/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 191ms (Views: 182.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1/lists/1/tasks/new" for ::1 at 2017-01-08 11:05:22 +0800
+Processing by TasksController#new as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (4.2ms)
+  Rendered tasks/new.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 82ms (Views: 77.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/users/1/lists/1/tasks" for ::1 at 2017-01-08 11:06:03 +0800
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5KhZxjPJPsWuuGCAJfiCDqupYymt7aQlQlvkX7oibCbivEmhewRHGyclGqe0XTyPGOnuFrZDjmgKYfq2OwihpQ==", "task"=>{"title"=>"Move database to Postgres", "imp"=>"3", "date"=>"2017-01-08T16:00", "comment"=>""}, "commit"=>"Submit", "user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.9ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "completed", "imp", "date", "comment", "list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Move database to Postgres"], ["completed", false], ["imp", 3], ["date", 2017-01-08 16:00:00 UTC], ["comment", ""], ["list_id", 1], ["created_at", 2017-01-08 03:06:03 UTC], ["updated_at", 2017-01-08 03:06:03 UTC]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/1/lists/1/tasks
+Completed 302 Found in 24ms (ActiveRecord: 7.1ms)
+
+
+Started GET "/users/1/lists/1/tasks" for ::1 at 2017-01-08 11:06:03 +0800
+Processing by TasksController#index as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ? AND "tasks"."completed" = ? ORDER BY "tasks"."date" ASC[0m  [["list_id", 1], ["completed", false]]
+  Rendered tasks/_form_for_index.html.erb (4.4ms)
+  Rendered tasks/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 212ms (Views: 198.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/1/lists/1/tasks" for ::1 at 2017-01-08 11:11:46 +0800
+Processing by TasksController#index as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.8ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ? AND "tasks"."completed" = ? ORDER BY "tasks"."date" ASC[0m  [["list_id", 1], ["completed", false]]
+  Rendered tasks/_form_for_index.html.erb (20.0ms)
+  Rendered tasks/index.html.erb within layouts/application (35.6ms)
+Completed 200 OK in 358ms (Views: 314.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/users/1/lists/1/tasks" for ::1 at 2017-01-08 11:11:48 +0800
+Processing by TasksController#index as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ? AND "tasks"."completed" = ? ORDER BY "tasks"."date" ASC[0m  [["list_id", 1], ["completed", false]]
+  Rendered tasks/_form_for_index.html.erb (8.7ms)
+  Rendered tasks/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 109ms (Views: 98.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/1/lists/1/tasks" for ::1 at 2017-01-08 11:12:22 +0800
+Processing by TasksController#index as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ? AND "tasks"."completed" = ? ORDER BY "tasks"."date" ASC[0m  [["list_id", 1], ["completed", false]]
+  Rendered tasks/_form_for_index.html.erb (5.3ms)
+  Rendered tasks/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 222ms (Views: 207.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/1/lists/1/tasks" for ::1 at 2017-01-08 11:12:24 +0800
+Processing by TasksController#index as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ? AND "tasks"."completed" = ? ORDER BY "tasks"."date" ASC[0m  [["list_id", 1], ["completed", false]]
+  Rendered tasks/_form_for_index.html.erb (3.4ms)
+  Rendered tasks/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 103ms (Views: 94.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1/lists/1/tasks/new" for ::1 at 2017-01-08 11:12:32 +0800
+Processing by TasksController#new as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (4.9ms)
+  Rendered tasks/new.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 86ms (Views: 78.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users/1/lists/1/tasks" for ::1 at 2017-01-08 11:12:45 +0800
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iNpcxAUyh/kg4Cvya0qTR2gjRKyQXC7vK+f98Zzz26yOzkyjTf/+J6l9UdX67y3G22PJk4vyBKJj3eMYHdkWLw==", "task"=>{"title"=>"Mid Submission", "imp"=>"3", "date"=>"2016-12-22T08:00", "comment"=>""}, "commit"=>"Submit", "user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "completed", "imp", "date", "comment", "list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Mid Submission"], ["completed", false], ["imp", 3], ["date", 2016-12-22 08:00:00 UTC], ["comment", ""], ["list_id", 1], ["created_at", 2017-01-08 03:12:45 UTC], ["updated_at", 2017-01-08 03:12:45 UTC]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/1/lists/1/tasks
+Completed 302 Found in 27ms (ActiveRecord: 6.5ms)
+
+
+Started GET "/users/1/lists/1/tasks" for ::1 at 2017-01-08 11:12:45 +0800
+Processing by TasksController#index as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ? AND "tasks"."completed" = ? ORDER BY "tasks"."date" ASC[0m  [["list_id", 1], ["completed", false]]
+  Rendered tasks/_form_for_index.html.erb (5.9ms)
+  Rendered tasks/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 156ms (Views: 147.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1/lists/1/tasks?order=date" for ::1 at 2017-01-08 11:12:48 +0800
+Processing by TasksController#index as HTML
+  Parameters: {"order"=>"date", "user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ? AND "tasks"."completed" = ? ORDER BY date[0m  [["list_id", 1], ["completed", false]]
+  Rendered tasks/_form_for_index.html.erb (4.2ms)
+  Rendered tasks/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 89ms (Views: 75.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1/lists/1/tasks?order=date" for ::1 at 2017-01-08 11:12:49 +0800
+Processing by TasksController#index as HTML
+  Parameters: {"order"=>"date", "user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.7ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ? AND "tasks"."completed" = ? ORDER BY date[0m  [["list_id", 1], ["completed", false]]
+  Rendered tasks/_form_for_index.html.erb (4.0ms)
+  Rendered tasks/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 109ms (Views: 97.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/1/lists/1/tasks?order=imp+DESC" for ::1 at 2017-01-08 11:12:50 +0800
+Processing by TasksController#index as HTML
+  Parameters: {"order"=>"imp DESC", "user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ? AND "tasks"."completed" = ? ORDER BY imp DESC[0m  [["list_id", 1], ["completed", false]]
+  Rendered tasks/_form_for_index.html.erb (10.9ms)
+  Rendered tasks/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 152ms (Views: 138.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/1/lists/1/tasks?order=completed" for ::1 at 2017-01-08 11:12:53 +0800
+Processing by TasksController#index as HTML
+  Parameters: {"order"=>"completed", "user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ? AND "tasks"."completed" = ? ORDER BY completed[0m  [["list_id", 1], ["completed", false]]
+  Rendered tasks/_form_for_index.html.erb (4.1ms)
+  Rendered tasks/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 84ms (Views: 69.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/1/lists/1/tasks?order=date" for ::1 at 2017-01-08 11:12:54 +0800
+Processing by TasksController#index as HTML
+  Parameters: {"order"=>"date", "user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ? AND "tasks"."completed" = ? ORDER BY date[0m  [["list_id", 1], ["completed", false]]
+  Rendered tasks/_form_for_index.html.erb (6.2ms)
+  Rendered tasks/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 103ms (Views: 90.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/1/lists/1/tasks?order=imp+DESC" for ::1 at 2017-01-08 11:12:56 +0800
+Processing by TasksController#index as HTML
+  Parameters: {"order"=>"imp DESC", "user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ? AND "tasks"."completed" = ? ORDER BY imp DESC[0m  [["list_id", 1], ["completed", false]]
+  Rendered tasks/_form_for_index.html.erb (4.5ms)
+  Rendered tasks/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 103ms (Views: 85.7ms | ActiveRecord: 2.1ms)
+
+
+Started DELETE "/logout" for ::1 at 2017-01-08 11:19:21 +0800
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"XOhlPnosKp6GQqm+YCdUWzS4v2NdUvfjWTvWfHD3YVcONujMol6WiMBwaYw94Cv2zfn5L3mzN371F4gAQZkg/Q=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-01-08 11:19:21 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (23.7ms)
+Completed 200 OK in 212ms (Views: 202.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/welcome.scss.css" for ::1 at 2017-01-08 11:19:22 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/welcome.scss.css"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered collection of /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [39 times] (12.9ms)
+  Rendered /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.5ms)
+  Rendering /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (142.0ms)
+Started GET "/login" for ::1 at 2017-01-08 11:19:24 +0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 75ms (Views: 66.8ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "John"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "todolist@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "u_p_75OeuaLBLDpNQUwp_g"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password_digest", "email", "created_at", "updated_at", "auth_token") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_name", "John"], ["password_digest", "$2a$10$uSZgqykCDy12gfD6wJjy7.9evNeU4ClrNR4drxjEDwL1ETknH5h8y"], ["email", "todolist@gmail.com"], ["created_at", 2017-01-08 03:19:43 UTC], ["updated_at", 2017-01-08 03:19:43 UTC], ["auth_token", "u_p_75OeuaLBLDpNQUwp_g"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "John"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "todolist@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."list_name" = ? LIMIT ?[0m  [["list_name", "Work"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "John"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "todolist@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "lists" ("list_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["list_name", "Work"], ["created_at", 2017-01-08 03:21:47 UTC], ["updated_at", 2017-01-08 03:21:47 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mList Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."list_name" = ? LIMIT ?[0m  [["list_name", "Travel"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "John"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "todolist@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "lists" ("list_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["list_name", "Travel"], ["created_at", 2017-01-08 03:21:47 UTC], ["updated_at", 2017-01-08 03:21:47 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."list_name" = ? LIMIT ?[0m  [["list_name", "Family"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "John"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "todolist@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO "lists" ("list_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["list_name", "Family"], ["created_at", 2017-01-08 03:21:47 UTC], ["updated_at", 2017-01-08 03:21:47 UTC]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/login" for ::1 at 2017-01-08 11:22:01 +0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NOag62Lc0F4guR4ZPcB7MJy+RFJAA5Qh2gE79OOlb1W+6LxcF2HtWjnrogmT+P5fXJuSSxGHEAZy7SxEOdinrg==", "session"=>{"user_name"=>"John", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "John"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/2/lists
+Completed 302 Found in 112ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/users/2/lists" for ::1 at 2017-01-08 11:22:01 +0800
+Processing by ListsController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering lists/index.html.erb within layouts/application
+  [1m[36mList Load (0.7ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered lists/index.html.erb within layouts/application (4.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "u_p_75OeuaLBLDpNQUwp_g"], ["LIMIT", 1]]
+Completed 200 OK in 293ms (Views: 278.6ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/logout" for ::1 at 2017-01-08 11:23:31 +0800
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"467KCOilfKzfCg+IANkGayAM6HY5GF4CIn8DUjtXqEaxcEf6MNfAupk4z7pdHnnG2U2uOh35np+OU10uCjnp7A=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-01-08 11:23:31 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 195ms (Views: 186.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/welcome.scss.css" for ::1 at 2017-01-08 11:23:31 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/welcome.scss.css"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered collection of /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [39 times] (16.0ms)
+  Rendered /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.8ms)
+  Rendering /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (142.7ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "John"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "todolist@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."list_name" = ? LIMIT ?[0m  [["list_name", "Entertainment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mList Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."list_name" = ? LIMIT ?[0m  [["list_name", "Work"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mList Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."list_name" = ? LIMIT ?[0m  [["list_name", "Travel"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mList Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."list_name" = ? LIMIT ?[0m  [["list_name", "Family"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/login" for ::1 at 2017-01-08 11:23:39 +0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 173ms (Views: 166.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-01-08 11:23:42 +0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zeDv/ribgA+KwsVWvjTHt3IufZOoz68TB2KFprlvEjBH7vNJzSa9C5OQeUYQDELYsgurivlLKzSvjpIWYxLayw==", "session"=>{"user_name"=>"John", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "John"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/2/lists
+Completed 302 Found in 80ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/2/lists" for ::1 at 2017-01-08 11:23:43 +0800
+Processing by ListsController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering lists/index.html.erb within layouts/application
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered lists/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "u_p_75OeuaLBLDpNQUwp_g"], ["LIMIT", 1]]
+Completed 200 OK in 67ms (Views: 60.2ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/logout" for ::1 at 2017-01-08 11:26:07 +0800
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"hEqkfy4hsPiipH/Wq8QzT2b4QedRsk3hJetBNm8VExDWlCmN9lMM7uSWv+T2A0zin7kHq3VTjXyJxx9KXntSug=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-01-08 11:26:07 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 227ms (Views: 219.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/welcome.scss.css" for ::1 at 2017-01-08 11:26:07 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/welcome.scss.css"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered collection of /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [39 times] (14.1ms)
+  Rendered /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.1ms)
+  Rendering /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (148.7ms)
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "John"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "todolist@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."list_name" = ? LIMIT ?[0m  [["list_name", "Work"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."list_name" = ? LIMIT ?[0m  [["list_name", "Travel"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."list_name" = ? LIMIT ?[0m  [["list_name", "Family"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/login" for ::1 at 2017-01-08 11:26:15 +0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 173ms (Views: 166.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-01-08 11:26:19 +0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"099jAmzJOcuNfYbv4pTcyq8xbyah14HkC0l5scDCUqZZ0X+1GXQEz5QvOv9MrFmlbxS5P/BTBcOjpW4BGr+aXQ==", "session"=>{"user_name"=>"John", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "John"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/2/lists
+Completed 302 Found in 91ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users/2/lists" for ::1 at 2017-01-08 11:26:19 +0800
+Processing by ListsController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering lists/index.html.erb within layouts/application
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered lists/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "u_p_75OeuaLBLDpNQUwp_g"], ["LIMIT", 1]]
+Completed 200 OK in 92ms (Views: 84.7ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/logout" for ::1 at 2017-01-08 11:26:47 +0800
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"DoXOEwIKxzYDPocIRyfZCoUc2z9PjNiAX0HHt7o4N01cW0Ph2nh7IEUMRzoa4KanfF2dc2ttGB3zbZnLi1Z25w=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-01-08 11:26:47 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 61ms (Views: 58.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/welcome.scss.css" for ::1 at 2017-01-08 11:26:47 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/welcome.scss.css"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered collection of /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [39 times] (21.4ms)
+  Rendered /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendering /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/alina/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (159.5ms)
+Started GET "/login" for ::1 at 2017-01-08 11:26:49 +0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 71ms (Views: 67.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-01-08 11:26:53 +0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VEJ3MMQlguezmVEYh1ZuFbTuFNu2B7w+b0vX1kKlnmPeTGuHsZi/46rL7Qgpbut6dMvCwueDOBnHp8BmmNhWmA==", "session"=>{"user_name"=>"Alina", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "Alina"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/1/lists
+Completed 302 Found in 86ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/1/lists" for ::1 at 2017-01-08 11:26:53 +0800
+Processing by ListsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering lists/index.html.erb within layouts/application
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 2]]
+  Rendered lists/index.html.erb within layouts/application (7.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+Completed 200 OK in 79ms (Views: 73.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1/lists/1/tasks" for ::1 at 2017-01-08 11:26:55 +0800
+Processing by TasksController#index as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ? AND "tasks"."completed" = ? ORDER BY "tasks"."date" ASC[0m  [["list_id", 1], ["completed", false]]
+  Rendered tasks/_form_for_index.html.erb (5.5ms)
+  Rendered tasks/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 89ms (Views: 74.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/1/lists/1/tasks/new" for ::1 at 2017-01-08 11:27:00 +0800
+Processing by TasksController#new as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (3.5ms)
+  Rendered tasks/new.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 71ms (Views: 64.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users/1/lists/1/tasks" for ::1 at 2017-01-08 11:27:14 +0800
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+uPofDDTDPtz38KeVQWn2kXALUYLyRsWMnT8THMdEFL89/gbeB51JfpCuLnEoBlb9oCgeRBnMVt6TuKl8jfd0Q==", "task"=>{"title"=>"aaaaaa", "imp"=>"1", "date"=>"2017-02-03T14:02", "comment"=>""}, "commit"=>"Submit", "user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "completed", "imp", "date", "comment", "list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "aaaaaa"], ["completed", false], ["imp", 1], ["date", 2017-02-03 14:02:00 UTC], ["comment", ""], ["list_id", 1], ["created_at", 2017-01-08 03:27:14 UTC], ["updated_at", 2017-01-08 03:27:14 UTC]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/1/lists/1/tasks
+Completed 302 Found in 17ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/users/1/lists/1/tasks" for ::1 at 2017-01-08 11:27:14 +0800
+Processing by TasksController#index as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ? AND "tasks"."completed" = ? ORDER BY "tasks"."date" ASC[0m  [["list_id", 1], ["completed", false]]
+  Rendered tasks/_form_for_index.html.erb (8.3ms)
+  Rendered tasks/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 84ms (Views: 73.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/1/lists/1/tasks/16/edit" for ::1 at 2017-01-08 11:27:18 +0800
+Processing by TasksController#edit as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1", "id"=>"16"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering tasks/edit.html.erb within layouts/application
+  Rendered tasks/_form_for_edit.html.erb (3.5ms)
+  Rendered tasks/edit.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 78ms (Views: 68.1ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/users/1/lists/1/tasks/16" for ::1 at 2017-01-08 11:27:21 +0800
+Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4Jh2RTvOxqyRrPBE97qQRlB00jDRQSPyYeb6NgXX5KMMyINjnJHXPQI8FWQSr/1soUsM5b2HeRB+PCSjoPZ/yg==", "task"=>{"title"=>"aaaaaa", "completed"=>"1", "imp"=>"1", "date"=>"2017-02-03T14:02:00", "comment"=>""}, "commit"=>"Submit", "user_id"=>"1", "list_id"=>"1", "id"=>"16"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "tasks" SET "completed" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["completed", true], ["updated_at", 2017-01-08 03:27:21 UTC], ["id", 16]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/1/lists/1/tasks
+Completed 302 Found in 31ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/users/1/lists/1/tasks" for ::1 at 2017-01-08 11:27:22 +0800
+Processing by TasksController#index as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ? AND "tasks"."completed" = ? ORDER BY "tasks"."date" ASC[0m  [["list_id", 1], ["completed", false]]
+  Rendered tasks/_form_for_index.html.erb (5.8ms)
+  Rendered tasks/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 104ms (Views: 94.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/1/lists/1/completed" for ::1 at 2017-01-08 11:27:24 +0800
+Processing by TasksController#completed as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/completed.html.erb within layouts/application
+  Rendered tasks/completed.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 76ms (Views: 59.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/1/lists/1/tasks" for ::1 at 2017-01-08 11:27:26 +0800
+Processing by TasksController#index as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ? AND "tasks"."completed" = ? ORDER BY "tasks"."date" ASC[0m  [["list_id", 1], ["completed", false]]
+  Rendered tasks/_form_for_index.html.erb (5.9ms)
+  Rendered tasks/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 97ms (Views: 83.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/1/lists/1/tasks" for ::1 at 2017-01-08 11:28:30 +0800
+Processing by TasksController#index as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ? AND "tasks"."completed" = ? ORDER BY "tasks"."date" ASC[0m  [["list_id", 1], ["completed", false]]
+  Rendered tasks/_form_for_index.html.erb (19.7ms)
+  Rendered tasks/index.html.erb within layouts/application (26.7ms)
+Completed 200 OK in 265ms (Views: 206.2ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/users/1/lists/1/completed" for ::1 at 2017-01-08 11:28:32 +0800
+Processing by TasksController#completed as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/completed.html.erb within layouts/application
+  Rendered tasks/completed.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 77ms (Views: 63.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1/lists/1/completed" for ::1 at 2017-01-08 11:28:34 +0800
+Processing by TasksController#completed as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/completed.html.erb within layouts/application
+  Rendered tasks/completed.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 79ms (Views: 69.1ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mTask Load (4.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+Started GET "/users/1/lists/1/completed" for ::1 at 2017-01-08 11:30:38 +0800
+Processing by TasksController#completed as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/completed.html.erb within layouts/application
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ? AND "tasks"."completed" = ? ORDER BY "tasks"."updated_at" ASC[0m  [["list_id", 1], ["completed", true]]
+  Rendered tasks/completed.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 279ms (Views: 212.3ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/users/1/lists/1/completed" for ::1 at 2017-01-08 11:32:40 +0800
+Processing by TasksController#completed as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/completed.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ? AND "tasks"."completed" = ? ORDER BY "tasks"."updated_at" ASC[0m  [["list_id", 1], ["completed", true]]
+  Rendered tasks/completed.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 215ms (Views: 203.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1/lists/1/completed" for ::1 at 2017-01-08 11:32:54 +0800
+Processing by TasksController#completed as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/completed.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ? AND "tasks"."completed" = ? ORDER BY "tasks"."updated_at" ASC[0m  [["list_id", 1], ["completed", true]]
+  Rendered tasks/completed.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 161ms (Views: 151.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1/lists/1/completed" for ::1 at 2017-01-08 11:33:50 +0800
+Processing by TasksController#completed as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/completed.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ? AND "tasks"."completed" = ? ORDER BY "tasks"."updated_at" ASC[0m  [["list_id", 1], ["completed", true]]
+  Rendered tasks/completed.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 76ms (Views: 65.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/1/lists/1/tasks/16/edit" for ::1 at 2017-01-08 11:34:03 +0800
+Processing by TasksController#edit as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1", "id"=>"16"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering tasks/edit.html.erb within layouts/application
+  Rendered tasks/_form_for_edit.html.erb (2.9ms)
+  Rendered tasks/edit.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 84ms (Views: 75.0ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/users/1/lists/1/tasks/16" for ::1 at 2017-01-08 11:34:05 +0800
+Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WVfTv67XVVONHFMsTZjimrjd+DdOcU2c2DUMLzbmBVq1ByaZCYhEwh6MtgyojY+wSeIm4iK3F37H79K6k8eeMw==", "task"=>{"title"=>"aaaaaa", "completed"=>"0", "imp"=>"1", "date"=>"2017-02-03T14:02:00", "comment"=>""}, "commit"=>"Submit", "user_id"=>"1", "list_id"=>"1", "id"=>"16"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.4ms)[0m  [1m[33mUPDATE "tasks" SET "completed" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["completed", false], ["updated_at", 2017-01-08 03:34:05 UTC], ["id", 16]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/1/lists/1/tasks
+Completed 302 Found in 19ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/users/1/lists/1/tasks" for ::1 at 2017-01-08 11:34:05 +0800
+Processing by TasksController#index as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ? AND "tasks"."completed" = ? ORDER BY "tasks"."date" ASC[0m  [["list_id", 1], ["completed", false]]
+  Rendered tasks/_form_for_index.html.erb (8.1ms)
+  Rendered tasks/index.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 86ms (Views: 71.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1/lists/1/completed" for ::1 at 2017-01-08 11:34:09 +0800
+Processing by TasksController#completed as HTML
+  Parameters: {"user_id"=>"1", "list_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = ? LIMIT ?[0m  [["auth_token", "pIo2f7it5C7CPIJkH6Tszg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = ? AND "lists"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering tasks/completed.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ? AND "tasks"."completed" = ? ORDER BY "tasks"."updated_at" ASC[0m  [["list_id", 1], ["completed", true]]
+  Rendered tasks/completed.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 73ms (Views: 61.1ms | ActiveRecord: 0.8ms)
+
+

@@ -1,23 +1,30 @@
 <% if @tasks %>
-   <p>No completed tasks yet</p>
-<% else %>
-<table>
-  <h1>Completed Tasks</h1>
+<h1>Completed Tasks</h1>
+<br><br>
+<table class="table table-striped">
+<thead>
   <tr>
     <th>Title</th>
     <th>Importance</th>
     <th>Due Date</th>
   </tr>
-
-
+</tjead>
+<tbody>
   <% @tasks.each do |t| %>
     <tr>
+      <div class="row">
       <td><%= t.title %></td>
       <td><%= t.imp %></td>
       <td><%= t.date %></td>
+      <td><%= link_to 'Edit', edit_user_list_task_path(t.list.user, t.list, t) %></td>
+      <td><%= link_to 'Delete', [t.list.user, t.list, t], method: :delete, data: {confirm: 'Are you sure?'} %></td>
+    </div>
     </tr>
   <% end %>
-
+</tbody>
 </table>
+<br><br>
+<% else %>
+   <p>No completed tasks yet</p>
 <% end %>
    <button type="button" class="btn btn-default"><%= link_to 'Back', user_list_tasks_path %></button>

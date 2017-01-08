@@ -6,7 +6,7 @@
 <thead>
   <tr>
     <th>Title</th>
-    <th>completed</th>
+    <th>Status</th>
     <th>Importance</th>
     <th>Due Date</th>
 </tr>
@@ -16,21 +16,20 @@
 
   <% @tasks.each do |t| %>
 <tr>
-
-
 <div class="row">
     <td><%= t.title %></td>
-
-
-    <td>
-        Incompleted
-</td>
-
+    <td>Incompleted</td>
       <td><%= t.imp %></td>
-      <td><%= t.date %></td>
+      <% if t.date <= Date.today %>
+        <td><font color="red"><%= t.date %></font></td>
+      <% else %>
+          <td><%= t.date %></td>
+      <% end %>
+
       <td><%= link_to 'Show', user_list_task_path(t.list.user, t.list, t), method: :get %></td>
       <td><%= link_to 'Edit', edit_user_list_task_path(t.list.user, t.list, t) %></td>
       <td><%= link_to 'Delete', [t.list.user, t.list, t], method: :delete, data: {confirm: 'Are you sure?'} %></td>
+
 </td>
 </tr>
   <% end %>
