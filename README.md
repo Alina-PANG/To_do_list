@@ -15,7 +15,7 @@ Tables included:
 
 ## Domain Model
 Run `rake generate_erd` to regenerate (must have graphvis).
-![](/erd.pdf)
+![](/erd.png)
 
 ## Features
 - This app is a simple to do list without css (yet)
