@@ -1,27 +1,35 @@
 <br><br>
+
 <%= form_for :user, url: user_path, method: :patch do |f| %>
+
+
 <% if @user.errors.any? %>
+<div class="alert alert-danger">
     <div id="error_explanation">
-      <h2>
+      <h3>
         <%= pluralize(@user.errors.count, "error") %> prohibited
         this user from being saved:
-      </h2>
+      </h3>
       <ul>
         <% @user.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
     </div>
+</div>
   <% end %>
 
+<br><br>
+<h1>Edit User Account</h1>
+<br><br><br>
   <p>
     Change Username<br>
     <%= f.text_field :user_name %>
   </p>
 
   <p>
-    Change Email<br>
-    <%= f.email_field :email %>
+    Change Password<br>
+    <%= f.password_field :password %>
   </p>
 <br>
   <p>

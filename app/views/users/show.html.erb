@@ -1,3 +1,6 @@
+<% if flash[:notice] %>
+ <div class="alert alert-success"><%= flash[:notice] %></div>
+<% end %>
 <h1>Listing lists</h1>
 
 <table>
@@ -5,10 +8,6 @@
     <th>List Name</th>
     <th>Number of Tasks</th>
   </tr>
-
-  <% if flash[:notice] %>
-     <div class="notice"><%= flash[:notice] %></div>
-   <% end %>
 
   <% @user.lists.each do |list| %>
     <tr>

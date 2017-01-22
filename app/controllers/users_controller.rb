@@ -11,7 +11,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update(user_params)
-      redirect_to user_lists_path
+      flash[:notice] = 'Your password has successfully been changed!'
+      redirect_to user_lists_path(@user)
     else
       render 'edit'
     end
